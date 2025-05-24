@@ -1,0 +1,127 @@
+{
+    "info": {
+      "name": "Book API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Create a Book",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"title\": \"1984\",\n  \"author\": \"Orwell\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "{{baseUrl}}/books",
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "path": [
+              "books"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get All Books",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "{{baseUrl}}/books",
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "path": [
+              "books"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Book by ID",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "{{baseUrl}}/books/{{bookId}}",
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "path": [
+              "books",
+              "{{bookId}}"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Update a Book",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"title\": \"Animal Farm\",\n  \"author\": \"George Orwell\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "{{baseUrl}}/books/{{bookId}}",
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "path": [
+              "books",
+              "{{bookId}}"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Delete a Book",
+        "request": {
+          "method": "DELETE",
+          "url": {
+            "raw": "{{baseUrl}}/books/{{bookId}}",
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "path": [
+              "books",
+              "{{bookId}}"
+            ]
+          }
+        }
+      }
+    ],
+    "variable": [
+      {
+        "key": "baseUrl",
+        "value": "http://localhost:3000"
+      },
+      {
+        "key": "bookId",
+        "value": ""
+      }
+    ]
+  }
+  

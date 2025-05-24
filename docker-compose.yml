@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:6.0
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db      # veri burada kalacak
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+volumes:
+  mongo-data: {}                # named volume tanımı
+
+networks:
+  app-network:
+    driver: bridge
